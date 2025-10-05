@@ -23,7 +23,7 @@ if "agent" not in st.session_state:
     try:
         google_api_key = st.secrets["GOOGLE_API_KEY"]
         llm_agent = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             google_api_key=google_api_key,
             temperature=0.7
         )
@@ -75,7 +75,7 @@ if uploaded_file is not None:
                 google_api_key = st.secrets["GOOGLE_API_KEY"]
                 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=google_api_key)
                 vectorstore = FAISS.from_documents(documents=splits, embedding=embeddings)
-                llm_rag = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=google_api_key, temperature=0.7)
+                llm_rag = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=google_api_key, temperature=0.7)
                 
                 prompt_template = ChatPromptTemplate.from_template("""
                 Anda adalah asisten untuk tugas tanya-jawab.
