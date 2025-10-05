@@ -1,0 +1,12 @@
+# Virtual Environment
+.venv/
+__pycache__/
+
+# Streamlit secrets (SANGAT PENTING)
+.streamlit/secrets.toml
+
+# Temporary files from RAG
+temp/
+
+# IDE settings
+.vscode/
